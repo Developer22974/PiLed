@@ -4,11 +4,7 @@ import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.RaspiPin;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Daniel
- * Date: 17.08.13
- * Time: 13:14
- * To change this template use File | Settings | File Templates.
+ * Created by masterhuck
  */
 public class Ausgabe {
     public static GpioPinDigitalOutput[] init() {
