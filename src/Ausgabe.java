@@ -27,7 +27,7 @@ public class Ausgabe {
         out[6].setState(true);
 
 
-        //test
+        //test  zuu
         return out;
 
     }
