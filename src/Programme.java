@@ -16,17 +16,48 @@ import java.util.Date;
  */
 public class Programme {
     int Length;
+    int Bild[][];
 
-    public static void ScrollingText(String Text, int Speed, int Loop) {
-        int ScrollingText[][] = new int[Text.length() * 11][9];
-        for (int a=0;a<Text.length();a++){
-            Zeichen(ScrollingText,)
+
+    public static void ScrollingText(String Text, int Speed, Boolean Loop) throws InterruptedException {
+
+        GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
+        out = Ausgabe.init();
+        int xPos = 0;
+        int ScrollingText[][] = new int[(Text.length() * 11) + 19][10];
+        int Bild[][] = new int[19][11];
+        Programme Prog = new Programme();
+
+        for (int a = 0; a < Text.length(); a++) {
+            Prog = Zeichen(ScrollingText, xPos, 0, Text.charAt(a));
+            xPos = xPos + Prog.Length + 1;
+            ScrollingText = Prog.Bild;
         }
+        do {
+            for (int a = 0; a < xPos + 1; a++) {
+                for (int x = 1; x < 19; x++) {
+                    for (int y = 1; y < 11; y++) {
+                        //if (a>xPos-15){
+                        Bild[x][y] = ScrollingText[x - 1 + a][y - 1];
+                          /*
+                        if (x>) Bild[x][y] = ScrollingText[x - 1][y - 1];       // Kp wie mann das hier machen soll
+                        }else {
+                        Bild[x][y] = ScrollingText[x - 1 + a][y - 1];
+                        }
+                        */
+                        //}
+                    }
+                }
+                Ausgabe.Ausgabe(Bild, out[1], out[4], out[5]);
+                Thread.sleep(Speed);
+            }
+
+        } while (Loop);
 
     }
 
 
-    public static int[][] Zeichen(int Bild[][], int xPos, int yPos, int Asci) throws InterruptedException {
+    public static Programme Zeichen(int Bild[][], int xPos, int yPos, char Asci) throws InterruptedException {
         //System.out.println("**PiLed Textausgabe**");
         //GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
         //out = Ausgabe.init();
@@ -39,6 +70,7 @@ public class Programme {
         int index = 0;
         int count = 0;
 
+
         try {
             BufferedReader in = new BufferedReader(new FileReader("Schrift.txt"));
             String zeile = null;
@@ -49,12 +81,11 @@ public class Programme {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.Length = 1;
 
         for (int y = 1; y < 10; y++) {
-            for (int x = 1; x < (Zeichen[Asci].length() / 9) + 1; x++) {
-                if ((Zeichen[Asci].substring(count, count + 1)).equals("1")) {
-                    Bild[x+xPos][y+yPos] = 1;
+            for (int x = 1; x < (Zeichen[Asci - 33].length() / 9) + 1; x++) {
+                if ((Zeichen[Asci - 33].substring(count, count + 1)).equals("1")) {
+                    Bild[x + xPos][y + yPos] = 1;
                 }
                 //System.out.println(Bild[x][y]);
                 count++;
@@ -66,7 +97,10 @@ public class Programme {
 
         //Ausgabe.Ausgabe(Bild, out[1], out[4], out[5]);
         //    Thread.sleep(500);
-        return Bild;
+        Programme Prog = new Programme();
+        Prog.Bild = Bild;
+        Prog.Length = Zeichen[Asci - 33].length() / 9;
+        return Prog;
     }
 
     public static void Snake() throws InterruptedException {

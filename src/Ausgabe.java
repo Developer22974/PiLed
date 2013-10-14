@@ -27,7 +27,6 @@ public class Ausgabe {
         out[6].setState(true);
 
 
-        //tessdfdsft  zuu
         return out;
 
     }

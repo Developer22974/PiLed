@@ -47,7 +47,8 @@ public class Main {
        }
      */
        // Programme.Snake();
-        Programme.Text();
+        Programme.ScrollingText(args[0],200,true);
+        //IR_Controll.IR_Recive();
         //Programme.Uhr();
         while(true){
 
