@@ -27,6 +27,7 @@ public class Ausgabe {
         out[6].setState(true);
 
 
+        //test
         return out;
 
     }
