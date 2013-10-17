@@ -33,19 +33,19 @@ public class Programme {
             xPos = xPos + Prog.Length + 1;
             ScrollingText = Prog.Bild;
         }
+        if (Loop) {
+            for (int x = 1; x < 19; x++) {
+                for (int y = 1; y < 11; y++) {
+                    ScrollingText[x + xPos + 3][y - 1] = ScrollingText[x][y - 1];
+                }
+            }
+        }
+
         do {
-            for (int a = 0; a < xPos + 1; a++) {
+            for (int a = 0; a < xPos + 3; a++) {
                 for (int x = 1; x < 19; x++) {
                     for (int y = 1; y < 11; y++) {
-                        //if (a>xPos-15){
                         Bild[x][y] = ScrollingText[x - 1 + a][y - 1];
-                          /*
-                        if (x>) Bild[x][y] = ScrollingText[x - 1][y - 1];       // Kp wie mann das hier machen soll
-                        }else {
-                        Bild[x][y] = ScrollingText[x - 1 + a][y - 1];
-                        }
-                        */
-                        //}
                     }
                 }
                 Ausgabe.Ausgabe(Bild, out[1], out[4], out[5]);
