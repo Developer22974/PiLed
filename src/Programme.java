@@ -136,6 +136,7 @@ public class Programme {
 
             }
 
+
             String daten = (Net.Anfrage(Sok)).substring(0, 2);
             System.out.print(daten + "  ");
             System.out.print(X);
