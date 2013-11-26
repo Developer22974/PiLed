@@ -81,6 +81,7 @@ public class IR_Controll {
             public void dataReceived(SerialDataEvent event) {
                 // print out the data received to the console
                 System.out.print(event.getData());
+
             }
         });
         serial.open(Serial.DEFAULT_COM_PORT, 9600);
