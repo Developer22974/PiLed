@@ -49,10 +49,13 @@ public class Main {
        // Programme.Snake();
        // Programme.ScrollingText(args[0],200,false);
         //IR_Controll.IR_Recive();
-        Programme.Uhr();
+        //Programme.Uhr();
+        //IR_Controll.FlankenScope();
+        IR_Controll.Serielle_com();
+        //IR_Controll.IR_Recive();
         while(true){
 
-
+        Thread.sleep(10);
         }
     }
 }
