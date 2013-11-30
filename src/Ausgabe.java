@@ -7,7 +7,11 @@ import com.pi4j.io.gpio.RaspiPin;
  * Created by masterhuck
  */
 public class Ausgabe {
+    GpioController gpio;
+    GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
+
     public static GpioPinDigitalOutput[] init() {
+        Ausgabe neue = new Ausgabe();
         GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
         // create gpio controller
         final GpioController gpio = GpioFactory.getInstance();
