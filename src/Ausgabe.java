@@ -8,26 +8,25 @@ import com.pi4j.io.gpio.RaspiPin;
  */
 public class Ausgabe {
     GpioController gpio;
-    GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
+    GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[7];
 
-    public static GpioPinDigitalOutput[] init() {
-        Ausgabe neue = new Ausgabe();
-        GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
+    public static Ausgabe init() {
+        Ausgabe gpio = new Ausgabe();
         // create gpio controller
-        final GpioController gpio = GpioFactory.getInstance();
+        gpio.gpio = GpioFactory.getInstance();
 
         // provision gpio pin #01
-        out[1] = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01);
-        out[4] = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04);
-        out[5] = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05);
-        out[6] = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06);
-        out[1].setState(true);
-        out[4].setState(true);
-        out[5].setState(true);
-        out[6].setState(true);
+        gpio.out[1] = gpio.gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01);
+        gpio.out[4] = gpio.gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04);
+        gpio.out[5] = gpio.gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05);
+        gpio.out[6] = gpio.gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06);
+        gpio.out[1].setState(true);
+        gpio.out[4].setState(true);
+        gpio.out[5].setState(true);
+        gpio.out[6].setState(true);
 
 
-        return out;
+        return gpio;
 
     }
 

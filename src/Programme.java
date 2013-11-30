@@ -18,11 +18,10 @@ public class Programme {
     int Length;
     int Bild[][];
 
+    public static void ScrollingText(String Text, int Speed, Boolean Loop, Ausgabe gpio) throws InterruptedException {
 
-    public static void ScrollingText(String Text, int Speed, Boolean Loop) throws InterruptedException {
-
-        GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
-        out = Ausgabe.init();
+        //GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
+        //out = Ausgabe.init().out;
         int xPos = 0;
         int ScrollingText[][] = new int[(Text.length() * 11) + 19][10];
         int Bild[][] = new int[19][11];
@@ -48,7 +47,7 @@ public class Programme {
                         Bild[x][y] = ScrollingText[x - 1 + a][y - 1];
                     }
                 }
-                Ausgabe.Ausgabe(Bild, out[1], out[4], out[5]);
+                Ausgabe.Ausgabe(Bild, gpio.out[1], gpio.out[4], gpio.out[5]);
                 Thread.sleep(Speed);
             }
 
@@ -117,7 +116,7 @@ public class Programme {
         int SnakeY[] = new int[50];
 
         GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
-        out = Ausgabe.init();
+        out = Ausgabe.init().out;
 
         Socket Sok = Net.soket();
 
@@ -176,7 +175,7 @@ public class Programme {
                         {{0, 1, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0, 1}, {0, 0, 0, 1, 2, 3, 4, 5, 6, 6, 6, 3, 2, 1, 3}}};
 
         GpioPinDigitalOutput out[] = new GpioPinDigitalOutput[10];
-        out = Ausgabe.init();
+        out = Ausgabe.init().out;
         //ocket Sok=Net.soket();
         //Boolean quitt=true;
         while (true) {

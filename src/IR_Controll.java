@@ -26,13 +26,13 @@ public class IR_Controll {
         serial.addListener(new SerialDataListener() {
             @Override
             public void dataReceived(SerialDataEvent event){
-                // print out the data received to the console
                 String Daten ="";
                 Daten = event.getData();
                 System.out.print(Daten);
+                Character A;
                 if (Daten.charAt(0)>33){
                 try {
-                    Programme.ScrollingText(Daten.substring(0,1),200,false);
+                    Programme.ScrollingText(String.valueOf(Daten.getBytes()[0]),200,false,Global.gpio);
                 } catch (InterruptedException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
