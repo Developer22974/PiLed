@@ -1,5 +1,6 @@
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,6 +18,33 @@ import java.util.Date;
 public class Programme {
     int Length;
     int Bild[][];
+                            //Ausgabe gipo
+    public static void test() throws InterruptedException {
+        while(true){
+            //Graphics2D g2d = PiLed.image.createGraphics();
+            PiLed.g2d.setColor(new Color(0,0,0));
+            PiLed.g2d.fillRect(0,0,18,10);
+            PiLed.g2d.setColor(new Color(0,0,255));
+            PiLed.g2d.setFont( new Font( "Verdana",0,11) );
+            PiLed.g2d.drawString("xD",0,9);
+            //PiLed.g2d.dispose();
+
+            Thread.sleep(1000);
+
+            //Graphics2D g2de = PiLed.image.createGraphics();
+            PiLed.g2d.setColor(new Color(0,0,0));
+            PiLed.g2d.fillRect(0,0,18,10);
+            PiLed.g2d.setColor(new Color(0,0,255));
+            PiLed.g2d.setFont( new Font( "Verdana",0,11) );
+            PiLed.g2d.drawString(":D",0,9);
+            //PiLed.g2d.dispose();
+
+
+            Thread.sleep(1000);
+
+        }
+
+    }
 
     public static void ScrollingText(String Text, int Speed, Boolean Loop, Ausgabe gpio) throws InterruptedException {
 

@@ -21,4 +21,6 @@ import com.pi4j.io.serial.SerialPortException;
 
 public class Global {
     public static Ausgabe gpio;
+    public static String IR_Data;
+    public static Boolean New_IR_Data;
 }
