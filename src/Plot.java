@@ -20,7 +20,7 @@ public class Plot {
         int[][] Worm = new int[200][2];
         Boolean Appel = false;
         while (true) {
-            if (Global.New_IR_Data) {
+        /*    if (Global.New_IR_Data) {
                 Global.New_IR_Data = false;
                 System.out.println(Global.IR_Data.getBytes()[0]);
                 if (Global.IR_Data.getBytes()[0] == 31) {
@@ -40,7 +40,7 @@ public class Plot {
                     DirY = 0;
                 }
             }
-
+            */
             x = x + DirX;
             y = y + DirY;
             if (x > 18) x = 1;
@@ -51,7 +51,7 @@ public class Plot {
                 Appel = false;
                 WormLength++;
                 int Bild2[][] = new int[19][11];
-                Ausgabe.Ausgabe(Bild2, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
+               // Ausgabe.Ausgabe(Bild2, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
                 Thread.sleep(100);
             }
             int Bild[][] = new int[19][11];
@@ -66,10 +66,10 @@ public class Plot {
                 if ((Worm[a][0] == x) & (Worm[a][1] == y)) {
                     int Full[][] = new int[19][11];
                     for (int c = 1; c < 19; c++) Arrays.fill(Full[c], 1);
-                    Ausgabe.Ausgabe(Full, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
+                    //Ausgabe.Ausgabe(Full, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
                     Thread.sleep(500);
                     for (int c = 1; c < 19; c++) Arrays.fill(Full[c], 0);
-                    Ausgabe.Ausgabe(Full, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
+                    //Ausgabe.Ausgabe(Full, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
                     DirX = 0;
                     DirY = 0;
                     x = 9;
@@ -92,14 +92,14 @@ public class Plot {
             }
 
             Bild[AppelX][AppelY] = 1;
-            Ausgabe.Ausgabe(Bild, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
+            //Ausgabe.Ausgabe(Bild, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
             // Thread.sleep(300);
             ///*
             for (int a = 0; a < 4; a++) {
                 if (Bild[AppelX][AppelY] == 1) {
                     Bild[AppelX][AppelY] = 0;
                 } else Bild[AppelX][AppelY] = 1;
-                Ausgabe.Ausgabe(Bild, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
+               // Ausgabe.Ausgabe(Bild, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
                 Thread.sleep(100);
             }
             //*/

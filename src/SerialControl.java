@@ -15,7 +15,6 @@ import java.text.Normalizer;
 public class SerialControl {
     PiLed PiLed;
 
-
     public SerialControl(PiLed piLed) {
         PiLed = piLed;
         System.out.println("Initial IR Control");
@@ -27,7 +26,7 @@ public class SerialControl {
                 String Daten ="";
                 Daten =event.getData();
                 if(!Daten.equals("")){
-                    PiLed.SeralDataEvent(Daten);
+                    PiLed.SerialDataEvent(Daten);
                 }
             }
         });

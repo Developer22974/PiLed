@@ -18,25 +18,26 @@ import java.util.Date;
 public class Programme {
     int Length;
     int Bild[][];
-                            //Ausgabe gipo
+
+    //Ausgabe gipo
     public static void test() throws InterruptedException {
-        while(true){
+        while (true) {
             //Graphics2D g2d = PiLed.image.createGraphics();
-            PiLed.g2d.setColor(new Color(0,0,0));
-            PiLed.g2d.fillRect(0,0,18,10);
-            PiLed.g2d.setColor(new Color(0,0,255));
-            PiLed.g2d.setFont( new Font( "Verdana",0,11) );
-            PiLed.g2d.drawString("xD",0,9);
+            PiLed.g2d.setColor(new Color(0, 0, 0));
+            PiLed.g2d.fillRect(0, 0, 18, 10);
+            PiLed.g2d.setColor(new Color(0, 0, 255));
+            PiLed.g2d.setFont(new Font("Verdana", 0, 11));
+            PiLed.g2d.drawString("xD", 0, 9);
             //PiLed.g2d.dispose();
 
             Thread.sleep(1000);
 
             //Graphics2D g2de = PiLed.image.createGraphics();
-            PiLed.g2d.setColor(new Color(0,0,0));
-            PiLed.g2d.fillRect(0,0,18,10);
-            PiLed.g2d.setColor(new Color(0,0,255));
-            PiLed.g2d.setFont( new Font( "Verdana",0,11) );
-            PiLed.g2d.drawString(":D",0,9);
+            PiLed.g2d.setColor(new Color(0, 0, 0));
+            PiLed.g2d.fillRect(0, 0, 18, 10);
+            PiLed.g2d.setColor(new Color(0, 0, 255));
+            PiLed.g2d.setFont(new Font("Verdana", 0, 11));
+            PiLed.g2d.drawString(":D", 0, 9);
             //PiLed.g2d.dispose();
 
 
@@ -81,8 +82,6 @@ public class Programme {
 
         } while (Loop);
     }
-
-
 
 
     public static Programme Zeichen(int Bild[][], int xPos, int yPos, char Asci) throws InterruptedException {
