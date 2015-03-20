@@ -7,4 +7,6 @@ public interface functionsInterface {
 
     public void SerialData();
     public void visible(boolean visible);
+    public void render();
+
 }

@@ -1,4 +1,5 @@
 import functions.*;
+import toolbox.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.*;
@@ -17,7 +18,9 @@ public class PiLed implements Runnable {
     public static Graphics2D g = image.createGraphics();
     public static StringBuilder SerialBuffer = new StringBuilder();
     public static Clock c;
+    public static StopWatch stw;
     private static DisplaySim Sim;
+    private static FunctionController fContrl;
 
     public void init(){
 
@@ -88,11 +91,15 @@ public class PiLed implements Runnable {
         }
 
         PiLed.start();
-        c = new Clock(g2d);
-
-        LinkedList<functionsInterface> f = new LinkedList<functionsInterface>();
-        f.add(c);
-        f.getFirst().visible(false);
+        fContrl = new FunctionController(g2d);
+        fContrl.functions.get(0).visible(true);
+        System.out.println(fContrl.functions.get(0));
+        //c = new Clock(g2d);
+        //stw = new StopWatch(true,0,g2d);
+        //c.visible(true);
+        //LinkedList<functionsInterface> f = new LinkedList<functionsInterface>();
+        //f.add(c);
+        //f.getFirst().visible(false);
     }
 
     public static void SerialDataEvent(String Data){
@@ -144,8 +151,12 @@ public class PiLed implements Runnable {
     }
 
     public void render(){
-        if (c != null) c.render();
+        //if (c != null) c.render();
+        //if (stw != null) stw.render();
 
+        for(int i = 0;i<fContrl.functions.size();i++){
+            fContrl.functions.get(0).render();
+        }
 
         if(windows) Sim.repaint();
         if(!windows) Ausgabe.AusgabeImg(gpio.out[1],gpio.out[4],gpio.out[5]);
