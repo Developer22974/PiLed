@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by Daniel on 12.10.14.
  */
-public class Clock {
+public class Clock implements functionsInterface  {
 
     Boolean ClockOn = true;
     Graphics2D g2d;
@@ -41,8 +41,19 @@ public class Clock {
 
             //System.out.println(ss.format(new Date()));
 
-
         }
+    }
+
+    public void visible(boolean visible) {
+
+        ClockOn = visible;
+
+    }
+
+
+
+    public void SerialData(){
+
     }
 
 

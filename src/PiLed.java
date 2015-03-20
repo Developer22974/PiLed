@@ -1,10 +1,6 @@
 import functions.*;
-import sun.net.www.content.text.plain;
-
-import javax.print.DocFlavor;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.List;
 
@@ -93,6 +89,10 @@ public class PiLed implements Runnable {
 
         PiLed.start();
         c = new Clock(g2d);
+
+        LinkedList<functionsInterface> f = new LinkedList<functionsInterface>();
+        f.add(c);
+        f.getFirst().visible(false);
     }
 
     public static void SerialDataEvent(String Data){

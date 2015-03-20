@@ -47,28 +47,6 @@ public class DisplaySim {
         }
     }
 
-/*    public static class draw extends JPanel {
-
-//        public void paintComponent(Graphics g){
-//            g.setColor(new Color(0,0,0));
-//            g.drawLine(0,0,100,100);
-//            //Graphics2D g2d = (Graphics2D) g;
-//            ((Graphics2D) g).scale(2,200);
-//        }
-        protected void paintComponent(Graphics g) {
-            paintComponent((Graphics2D) g);
-        }
-
-        protected void paintComponent(Graphics2D g2d) {
-            g2d.setColor(new Color(0,0,0));
-            g2d.drawLine(0,0,100,100);
-            g2d.rotate(6);
-        }
-    }*/
-
-
-
-
 
     public DisplaySim() {
         EventQueue.invokeLater(new Runnable() {
