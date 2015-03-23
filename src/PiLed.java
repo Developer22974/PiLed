@@ -1,3 +1,5 @@
+//MH
+
 import functions.*;
 
 import java.awt.*;
@@ -85,7 +87,7 @@ public class PiLed implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
         PiLed PiLed = new PiLed();
-        windows = System.getProperty("os.name").equals("Windows 7");
+        windows = System.getProperty("os.name").equals("Windows 7") || System.getProperty("os.name").equals("Windows 8");
 
         if (!windows) {
             gpio = Ausgabe.init();
