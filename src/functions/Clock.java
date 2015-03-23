@@ -36,6 +36,11 @@ public class Clock implements functionsInterface {
         }
     }
 
+
+    public void SerialData(String SerialData) {
+
+    }
+
     public void visible(boolean visible) {
 
         ClockOn = visible;
@@ -43,9 +48,7 @@ public class Clock implements functionsInterface {
     }
 
 
-    public void SerialData() {
 
-    }
 
 
 }

@@ -25,10 +25,10 @@ public class StopWatch implements functionsInterface {
 
     }
 
-    public void SerialData() {
+
+    public void SerialData(String SerialData) {
 
     }
-
 
     public void visible(boolean visible) {
         StopWatchOn = visible;
