@@ -1,12 +1,6 @@
 <component name="libraryTable">
   <library name="pi4j-core-javadoc">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-core.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-device.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-example.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-gpio-extension.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-service.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-core-javadoc.jar!/" />
       <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-device-javadoc.jar!/" />
@@ -20,6 +14,7 @@
       <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-example-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-gpio-extension-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../pi4j-0.0.5/lib/pi4j-service-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/src" />
     </SOURCES>
   </library>
 </component>
