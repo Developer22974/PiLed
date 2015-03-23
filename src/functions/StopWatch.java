@@ -1,6 +1,7 @@
 package functions;
 
-import toolbox.drawText;
+import toolbox.*;
+
 
 import java.awt.*;
 

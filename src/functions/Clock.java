@@ -24,13 +24,13 @@ public class Clock implements functionsInterface {
         hh.applyPattern("hh");
         mm.applyPattern("mm");
         ss.applyPattern("ss");
-        st = new scrollingText(0.6, 0, "Arial", "", 1, g2d, 14);
+        st = new scrollingText(0.6, 0, "Arial", "", 1, g2d, 11);
     }
 
     public void render() {
         if (ClockOn) {
 
-            st.setText(hh.format(new Date()) + ":" + ss.format(new Date()));
+            st.setText(hh.format(new Date()) + ":" + ss.format(new Date()),false);
             st.render();
 
         }
