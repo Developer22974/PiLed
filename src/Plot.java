@@ -50,7 +50,7 @@ public class Plot {
             if ((x == AppelX) && (y == AppelY)) {
                 Appel = false;
                 WormLength++;
-                int Bild2[][] = new int[19][11];
+               //int Bild2[][] = new int[19][11];
                // Ausgabe.Ausgabe(Bild2, Global.gpio.out[1], Global.gpio.out[4], Global.gpio.out[5]);
                 Thread.sleep(100);
             }

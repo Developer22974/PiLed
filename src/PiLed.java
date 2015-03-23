@@ -10,19 +10,14 @@ import java.util.List;
 
 public class PiLed implements Runnable {
 
-    public static final int WIDE = 18;
-    public static final int HIGHT = 10;
     private static Boolean windows = false;
     private Boolean running = false;
     private Thread thread;
     public static Ausgabe gpio;
     public static BufferedImage image = new BufferedImage(18, 10, BufferedImage.TYPE_BYTE_GRAY);
     public static Graphics2D g2d = image.createGraphics();
-    public static Graphics2D g = image.createGraphics();
     public static StringBuilder SerialBuffer = new StringBuilder();
     public static List<String> contend = new ArrayList<String>();
-    public static Clock c;
-    public static StopWatch stw;
     private static DisplaySim Sim;
     private static FunctionController fContrl;
 
@@ -117,7 +112,6 @@ public class PiLed implements Runnable {
 
     public static void SerialDataEvent(String Data) {
         Boolean lastCharX = false, dataFrame = false, frameEnd = false;
-        char indicationChar;
         char frameContend[] = new char[32];
         int contendCount = 0;
         int frameEndPos = 0;
@@ -135,7 +129,7 @@ public class PiLed implements Runnable {
                     lastCharX = false;
                     frameEnd = true;
                 }
-                if (lastCharX == true) {
+                if (lastCharX) {
                     dataFrame = true;
                     contendCount = 0;
                 }
@@ -163,13 +157,8 @@ public class PiLed implements Runnable {
 
     }
 
-    public static void test() {
-
-    }
-
     public void tic() {
         //if (c != null) c.tic();
-
 
     }
 

@@ -1,13 +1,6 @@
 import java.io.*;
 import java.net.Socket;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Daniel
- * Date: 21.08.13
- * Time: 12:37
- * To change this template use File | Settings | File Templates.
- */
 public class Net {
     public static Socket soket() {
         Socket sok = null;
@@ -21,7 +14,7 @@ public class Net {
     }
 
     public static String Anfrage(Socket sok) {
-        String s="";
+        String s;
         try{
         PrintStream os = new PrintStream( sok.getOutputStream() );
         BufferedReader in = new BufferedReader(new InputStreamReader( sok.getInputStream()) );
