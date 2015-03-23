@@ -95,7 +95,7 @@ public class PiLed implements Runnable {
         } else {
             Sim = new DisplaySim();
         }
-
+        //1
         PiLed.start();
         fContrl = new FunctionController(g2d);
         //fContrl.functions.get(0).visible(true);
