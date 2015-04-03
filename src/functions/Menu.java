@@ -10,7 +10,7 @@ import java.awt.*;
 public class Menu implements functionsInterface {
     Boolean MenuOn = true;
     Graphics2D g2d;
-    int itemIndex = 0;
+    int itemIndex = 2;
     String[] items= new String[10];
     scrollingText st;
     FunctionController functions;
@@ -19,12 +19,12 @@ public class Menu implements functionsInterface {
         this.g2d = g2d;
         this.functions =  functions;
 
-        items[0] = "0_Clock".toUpperCase();
-        items[1] = "1_StopWatch";//.toUpperCase();
-        items[2] = "2_Serial Event ygjµ";
-        items[3] = "Ga";
+        //items[0] = "0_Clock".toUpperCase();
+        items[1] = "StopWatch";//.toUpperCase();
+        items[2] = "Clock";
+        //items[3] = "Gaz";
 
-        st = new scrollingText(1, 0, "Arial", items[itemIndex], 1, g2d, 11);
+        st = new scrollingText(0.5, 0, 8, "Arial", items[itemIndex], 1, g2d, 11);
     }
 
 
@@ -32,10 +32,11 @@ public class Menu implements functionsInterface {
     public void SerialData(String SerialData) {
 
         if(SerialData.charAt(0)==65){
+
             if(SerialData.charAt(1)==49){
-                if (itemIndex == functions.getfunctionsSize()) itemIndex = 0;
                 if (itemIndex < functions.getfunctionsSize()){
                     itemIndex+=1;
+                    if (itemIndex == functions.getfunctionsSize()) itemIndex = 1;
                     st.setText(items[itemIndex],true);
                 }
 
@@ -66,9 +67,7 @@ public class Menu implements functionsInterface {
 
     public void render() {
         if(MenuOn){
-
-
-            st.render();
+              st.render();
         }
     }
 }
